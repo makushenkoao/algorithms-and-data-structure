@@ -2,15 +2,6 @@
 
 ### Алгоритм - це набір послідовних дій, які вирішують якусь задачу.
 
-### Основні складності алгоритмів:
-
-- O(1)
-- O(Log2n)
-- O(n)
-- O(n \* Log2n)
-- O(n^2)
-- O(n!)
-
 ### Основні складності алгоритмів можна розділити на такі категорії:
 
 - Часова складність (Time Complexity):
@@ -39,7 +30,16 @@
 - Складність паралелізації (Parallelization Complexity):
     - Складність, пов'язана з можливістю та ефективністю розпаралелювання виконання алгоритму на кількох ядрах процесора.
 
-### Структури:
+### Основні складності алгоритмів, які найчастіше зустрічаються:
+
+- O(1)
+- O(Log2n)
+- O(n)
+- O(n \* Log2n)
+- O(n^2)
+- O(n!)
+
+### Структури даних:
 
 - Масиви:
     - Масиви представляють собою впорядковані колекції елементів одного або різних типів даних.
@@ -109,3 +109,19 @@
 
 ![Image 1](images/image_1.png)
 ![Image 2](images/image_2.jpg)
+
+### Приклади:
+- [1_linear_search.js](1_linear_search.js)
+- [2_binary_search.js](2_binary_search.js)
+- [3_selection_sort.js](3_selection_sort.js)
+- [4_bubble_sort.js](4_bubble_sort.js)
+- [5_quich_sort.js](5_quich_sort.js)
+- [6_recursion.js](6_recursion.js)
+- [7_poisk_v_shirinu.js](7_poisk_v_shirinu.js)
+- [8_matrix_smeznosti.js](8_matrix_smeznosti.js)
+- [9_algoritm_dijkstra.js](9_algoritm_dijkstra.js)
+- [10_tree_algs.js](10_tree_algs.js)
+- [11_cash.js](11_cash.js)
+- [12_linked_list.js](12_linked_list.js)
+- [13_binary_tree.js](13_binary_tree.js)
+- [14_set_map.js](14_set_map.js)

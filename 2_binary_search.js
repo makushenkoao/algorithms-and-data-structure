@@ -1,42 +1,65 @@
-// ITERATION
+// Бинарный поиск. Сложность данного алгоритма - O(log n)
+// Функция iterationBinarySearch выполняет бинарный поиск элемента в отсортированном массиве
+// с использованием итерации.
+// Принимает два аргумента: массив (array), в котором нужно искать, и элемент (item), который нужно найти.
+function iterationBinarySearch(array, item) {
+  // Если элемент item не существует (undefined или null), возвращаем null
+  if (!item) return null;
 
-// function binarySearch(array, item) {
-//   if (!item) return null;
-//
-//   let start = 0,
-//     end = array.length - 1;
-//
-//   while (start <= end) {
-//     const middle = (start + end) >> 1;
-//     if (array[middle] === item) {
-//       return middle;
-//     }
-//
-//     if (item < array[middle]) {
-//       end = middle - 1;
-//     } else {
-//       start = middle + 1;
-//     }
-//   }
-//
-//
-//   return -1;
-// }
+  // Инициализируем начальный и конечный индексы для поиска
+  let start = 0,
+    end = array.length - 1;
 
-// RECURSIVE
+  // Итеративно выполняем поиск в массиве, пока начальный индекс меньше или равен конечному
+  while (start <= end) {
+    // Находим средний индекс текущего диапазона
+    const middle = (start + end) >> 1; // Используем сдвиг вправо для оптимизации деления на 2
 
-function binarySearch(array, item, start = 0, end = array.length - 1) {
+    // Если элемент в средней позиции совпадает с искомым элементом, возвращаем его индекс
+    if (array[middle] === item) {
+      return middle;
+    }
+
+    // Если искомый элемент меньше, чем элемент в средней позиции,
+    // сужаем диапазон поиска, исключая правую половину
+    if (item < array[middle]) {
+      end = middle - 1;
+    } else {
+      // Иначе, если искомый элемент больше, чем элемент в средней позиции,
+      // сужаем диапазон поиска, исключая левую половину
+      start = middle + 1;
+    }
+  }
+
+  // Если элемент не найден после завершения цикла, возвращаем -1
+  return -1;
+}
+
+// Функция recursiveBinarySearch выполняет бинарный поиск элемента в отсортированном массиве
+// с использованием рекурсии.
+// Принимает четыре аргумента: массив (array), элемент (item), начальный индекс (start)
+// и конечный индекс (end) для текущего диапазона поиска.
+function recursiveBinarySearch(array, item, start = 0, end = array.length - 1) {
+  // Если начальный индекс больше конечного, элемент не найден, возвращаем -1
   if (start > end) return -1;
 
-  const middle = (start + end) >> 1;
+  // Находим средний индекс текущего диапазона
+  const middle = (start + end) >> 1; // Используем сдвиг вправо для оптимизации деления на 2
 
+  // Если элемент в средней позиции совпадает с искомым элементом, возвращаем его индекс
   if (array[middle] === item) {
     return middle;
   } else if (item < array[middle]) {
-    return binarySearch(array, item, start, middle - 1);
+    // Если искомый элемент меньше, чем элемент в средней позиции,
+    // рекурсивно вызываем функцию для левой половины массива
+    return recursiveBinarySearch(array, item, start, middle - 1);
   } else {
-    return binarySearch(array, item, middle + 1, end);
+    // Иначе, если искомый элемент больше, чем элемент в средней позиции,
+    // рекурсивно вызываем функцию для правой половины массива
+    return recursiveBinarySearch(array, item, middle + 1, end);
   }
 }
 
-console.log(binarySearch([1, 2, 3, 4, 5], 3));
+// Вызываем функции для поиска элемента 3 в отсортированном массиве [1, 2, 3, 4, 5]
+console.log(iterationBinarySearch([1, 2, 3, 4, 5], 3)); // 2
+console.log(recursiveBinarySearch([1, 2, 3, 4, 5], 3)); // 2
