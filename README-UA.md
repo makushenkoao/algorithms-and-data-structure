@@ -165,7 +165,7 @@
 - [2_binary_search.js](2_binary_search.js)
 - [3_selection_sort.js](3_selection_sort.js)
 - [4_bubble_sort.js](4_bubble_sort.js)
-- [5_quich_sort.js](5_quich_sort.js)
+- [5_quick_sort.js](5_quick_sort.js)
 - [6_recursion.js](6_recursion.js)
 - [7_poisk_v_shirinu.js](7_poisk_v_shirinu.js)
 - [8_matrix_smeznosti.js](8_matrix_smeznosti.js)
@@ -175,3 +175,4 @@
 - [12_linked_list.js](12_linked_list.js)
 - [13_binary_tree.js](13_binary_tree.js)
 - [14_set_map.js](14_set_map.js)
+- [15_merge_sort.js](15_merge_sort.js)
